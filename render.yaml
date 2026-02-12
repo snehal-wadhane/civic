@@ -5,28 +5,36 @@ services:
     plan: free
     region: oregon
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 2
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT --workers 1
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11.0"
+        value: 3.11.0
       - key: SUPABASE_URL
-        sync: false
+        value: https://ihrshbredtdhuwubbtpo.supabase.co
       - key: SUPABASE_SECRET
-        sync: false
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlocnNoYnJlZHRkaHV3dWJidHBvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczOTI3ODczMywiZXhwIjoyMDU0ODU0NzMzfQ.qk88T3uPCUXpilApWEPPmw1vn7NnJXFRyXwAf_hHO7I
       - key: SUPABASE_BUCKET_NAME
         value: product_image
       - key: SECRET_KEY
-        generateValue: true
+        value: 9e2125a90c246490aa471fe08e1c0e0cf67fbad76bde20a615b3e6c023547f0f
       - key: ALGORITHM
         value: HS256
       - key: ACCESS_TOKEN_EXPIRE_MINUTES
-        value: "30"
+        value: 30
       - key: ALLOWED_ORIGINS
         value: "*"
       - key: DEBUG
-        value: "False"
+        value: False
+      - key: APP_NAME
+        value: CivicLink
+      - key: APP_VERSION
+        value: 2.0.0
       - key: YOLO_MODEL_PATH
         value: models/pothole_yolov8_best.pt
       - key: MIN_CONFIDENCE
-        value: "0.1"
+        value: 0.1
+      - key: NEARBY_RADIUS_KM
+        value: 0.5
+      - key: OSM_SEARCH_RADIUS_M
+        value: 500
