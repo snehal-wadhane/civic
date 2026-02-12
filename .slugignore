@@ -1,0 +1,11 @@
+*.md
+*.txt
+!requirements.txt
+tests/
+docs/
+examples/
+.git/
+.github/
+__pycache__/
+*.pyc
+.env.example
