@@ -9,7 +9,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.10.0
       - key: SUPABASE_URL
         value: https://ihrshbredtdhuwubbtpo.supabase.co
       - key: SUPABASE_SECRET
